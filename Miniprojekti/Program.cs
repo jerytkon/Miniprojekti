@@ -5,7 +5,7 @@ using System.Linq;
 using System.Reflection;
 using System.Globalization; 
 class Program
-{
+{ 
     public static void Main(string[] args)
     {
         var cultureInfo = new CultureInfo("fi-FI");
