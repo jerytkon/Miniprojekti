@@ -29,6 +29,11 @@ class Program
                 rivi.Location = line[4];
                 rivi.MaterialType = line[5];
                 rivi.Description = line[6];
+                if (line[6].Length > 500) 
+                {
+                    Tiedostokuvaus.Tiedostokuvaus.KirjoitaVirhe(virhePath, index + 1, "Description", "Liian pitkä.");
+
+                }
                 try
                 {
                     rivi.MatCode = Convert.ToBoolean(line[7]);
@@ -38,13 +43,17 @@ class Program
                     Debug.WriteLine(line[7]);
                     Tiedostokuvaus.Tiedostokuvaus.KirjoitaVirhe(virhePath, index + 1, "MatCode", "System.FormatException");
                 }
-                //rivi.MainCategory = line[8];
-                //rivi.SubCategory1 = line[9];
-                //try
-                //{
-                //    rivi.SubCategory2 = line[10];
-                //}
-                //catch (System.IndexOutOfRangeException) { continue; }
+                rivi.MainCategory = line[8];
+                if (line.Length < 10)
+                {
+                    Tiedostokuvaus.Tiedostokuvaus.KirjoitaVirhe(virhePath, index + 1, "Category", "Kategoria puuttuu.");
+                }
+                rivi.SubCategory1 = line[9];
+                try
+                {
+                    rivi.SubCategory2 = line[10];
+                }
+                catch (System.IndexOutOfRangeException) { continue; }
                 listA.Add(rivi);
                 index++;
                 Console.WriteLine(line);
