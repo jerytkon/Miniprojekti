@@ -21,6 +21,7 @@ class Program
             {
                 string headerLine = reader.ReadLine();
                 var line = reader.ReadLine().Split(';');
+                
                 Tiedostokuvaus.Tiedostokuvaus rivi = new Tiedostokuvaus.Tiedostokuvaus();
                 rivi.CourseCode = Convert.ToInt32(line[0]);
                 rivi.Name = line[1];
@@ -29,13 +30,22 @@ class Program
                 rivi.Location = line[4];
                 //rivi.MaterialType = Convert.ToBoolean(line[5]); //logiikka, sähköinen = True, paperi=false
                 rivi.Description = line[6];
+                if (rivi.Description.Length > 500)
+                {
+                    //laitetaanko return vai virheilmoitus
+                }
                 try
                 {
                     rivi.MatCode = Convert.ToBoolean(line[7]);
                 }
                 catch (System.FormatException) { continue; }
                 rivi.MainCategory = line[8];
+                if ()
+                    { 
+
+                    }
                 rivi.SubCategory1 = line[9];
+                
                 try
                 {
                     rivi.SubCategory2 = line[10];
