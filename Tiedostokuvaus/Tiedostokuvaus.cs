@@ -1,6 +1,6 @@
 ﻿namespace Tiedostokuvaus
 {
-    public class Class1
+    public class Tiedostokuvaus
     {
         public int CourseCode { get; set; }
         public string Name { get; set; }
@@ -9,11 +9,15 @@
         public string Location { get; set; }
         public bool MaterialType { get; set; }
         public string Description { get; set; }
-        public int MatCode { get; set; }
+        public bool MatCode { get; set; }
         public string MainCategory { get; set; }
         public string SubCategory1 { get; set; }
         public string SubCategory2 { get; set; }
-        public Class1(int courseCode, string name, DateTime startDate, DateTime endDate, string location, bool materialType, string description, int matCode, string mainCategory, string subCategory1, string subCategory2)
+        public Tiedostokuvaus()
+        {
+
+        }
+        public Tiedostokuvaus(int courseCode, string name, DateTime startDate, DateTime endDate, string location, bool materialType, string description, bool matCode, string mainCategory, string subCategory1, string subCategory2)
         {
             CourseCode = courseCode;
             Name = name;
