@@ -1,7 +1,6 @@
 ﻿// See https://aka.ms/new-console-template for more information
 using System.IO;
 using Tiedostokuvaus;
-using System.Linq;
 using System.Reflection;
 using System.Globalization;
 using System.Diagnostics;
